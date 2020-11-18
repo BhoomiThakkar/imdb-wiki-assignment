@@ -4,7 +4,7 @@ import pandas as pd
 from pickle import dump
 from sklearn import metrics
 from keras.models import Model
-from utility import model_functions
+from utility import model_training_functions
 from keras.applications.vgg16 import VGG16
 
 '''
@@ -38,7 +38,7 @@ print(vggmodel.summary())
 
 # Extract features for all images (pickle used for faster serialization/de-serialization)
 # we can use JSON/XML/txt files too instead
-features = model_functions.extract_features(image_directory)
+features = model_training_functions.extract_features(image_directory)
 print('Extracted Features: ', len(features))
 dump(features, open(feature_directory+'features.pkl', 'wb'))
 
@@ -74,7 +74,7 @@ ytest=ytest.reshape(len(ytest), 1).astype("float32")
 
 
 # Training the Age Classification model
-ageclassification_model=model_functions.define_model(nclasses)
+ageclassification_model=model_training_functions.define_model(nclasses)
 ageclassification_model.fit([Xtrain], ytrain, epochs=nepochs, verbose=2)
 ypred=ageclassification_model.predict(Xtest)
 ypredlabels=[np.argmax(i) for i in ypred]
