@@ -11,7 +11,7 @@ code:
 utility:
 1. extract_data.py - For extracting DOB, Date of photo taken, gender, filepath, face score 1 & 2 from the metadata for Wiki & IMDB datasets
 2. frequency_bins.py - Used for plotting histogram by age-buckets (based on quantile cuts)
-3. model_training_functions - Contains function definitions for VGG-16 Feature Extraction & Age Classification Model Architecture
+3. model_training_functions.py - Contains function definitions for VGG-16 Feature Extraction & Age Classification Model Architecture
 
 plots: Contains the different frequency distributions of age for the combined IMDB-Wiki dataset
 
