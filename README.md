@@ -15,4 +15,4 @@ utility:
 
 plots: Contains the different frequency distributions of age for the combined IMDB-Wiki dataset
 
-Files downloaded from https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/
+Data downloaded from https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/
