@@ -76,8 +76,10 @@ ytest=ytest.reshape(len(ytest), 1).astype("float32")
 # Training the Age Classification model
 ageclassification_model=model_training_functions.define_model(nclasses)
 ageclassification_model.fit([Xtrain], ytrain, epochs=nepochs, verbose=2)
-ypred=ageclassification_model.predict(Xtest)
-ypredlabels=[np.argmax(i) for i in ypred]
+
+# Testing the model on the test set
+ypred=ageclassification_model.predict(Xtest) # returns the normalised probability estimates for all 101 classes
+ypredlabels=[np.argmax(i) for i in ypred] # get the age label with the maximum probability
 ytestlabels=[int(i[0]) for i in ytest.tolist()]
 
 # Print Precision, Recall, F-1
