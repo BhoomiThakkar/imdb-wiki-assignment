@@ -15,15 +15,15 @@ destination_dir=project_dir+'plots/'
 df = pd.read_csv(source_dir+'compiled_data_score1.csv')
 
 # Task 2 - Frequency Distribution by bins 10, 20
-frequency_bins.generate_frequency_bins(df, 10, destination)
-frequency_bins.generate_frequency_bins(df, 20, destination)
+frequency_bins.generate_frequency_bins(df, 10, destination_dir)
+frequency_bins.generate_frequency_bins(df, 20, destination_dir)
 
 # Kernel Density Estimates
 sns.kdeplot(df['age'])
 sns.kdeplot(df['age'],color='navy')
 plt.xlabel('Age Distribution')
 plt.title('Kernel Density Estimate for Age')
-plt.savefig(destination+'KDensity.png')
+plt.savefig(destination_dir+'KDensity.png')
 
 
 # Task 3 - Bucket Size for 15-25 yrs age
